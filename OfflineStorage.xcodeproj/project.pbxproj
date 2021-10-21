@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CD27219A8B00902D93 /* AppDelegate.swift */; };
+		80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */; };
+		80B8D6D227219A8B00902D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6D127219A8B00902D93 /* ViewController.swift */; };
+		80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D327219A8B00902D93 /* Main.storyboard */; };
+		80B8D6D827219A8B00902D93 /* OfflineStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6D627219A8B00902D93 /* OfflineStorage.xcdatamodeld */; };
+		80B8D6DA27219A8C00902D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D927219A8C00902D93 /* Assets.xcassets */; };
+		80B8D6DD27219A8C00902D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6DB27219A8C00902D93 /* LaunchScreen.storyboard */; };
+		80B8D6E827219A8C00902D93 /* OfflineStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6E727219A8C00902D93 /* OfflineStorageTests.swift */; };
+		80B8D6F227219A8C00902D93 /* OfflineStorageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6F127219A8C00902D93 /* OfflineStorageUITests.swift */; };
+		80B8D6F427219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80B8D6E427219A8C00902D93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B8D6C227219A8B00902D93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B8D6C927219A8B00902D93;
+			remoteInfo = OfflineStorage;
+		};
+		80B8D6EE27219A8C00902D93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B8D6C227219A8B00902D93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B8D6C927219A8B00902D93;
+			remoteInfo = OfflineStorage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80B8D6CA27219A8B00902D93 /* OfflineStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B8D6CD27219A8B00902D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		80B8D6D127219A8B00902D93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B8D6D427219A8B00902D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80B8D6D727219A8B00902D93 /* OfflineStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfflineStorage.xcdatamodel; sourceTree = "<group>"; };
+		80B8D6D927219A8C00902D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80B8D6DC27219A8C00902D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80B8D6DE27219A8C00902D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B8D6E327219A8C00902D93 /* OfflineStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B8D6E727219A8C00902D93 /* OfflineStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageTests.swift; sourceTree = "<group>"; };
+		80B8D6ED27219A8C00902D93 /* OfflineStorageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineStorageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B8D6F127219A8C00902D93 /* OfflineStorageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageUITests.swift; sourceTree = "<group>"; };
+		80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80B8D6C727219A8B00902D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6E027219A8C00902D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6EA27219A8C00902D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80B8D6C127219A8B00902D93 = {
+			isa = PBXGroup;
+			children = (
+				80B8D6CC27219A8B00902D93 /* OfflineStorage */,
+				80B8D6E627219A8C00902D93 /* OfflineStorageTests */,
+				80B8D6F027219A8C00902D93 /* OfflineStorageUITests */,
+				80B8D6CB27219A8B00902D93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80B8D6CB27219A8B00902D93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D6CA27219A8B00902D93 /* OfflineStorage.app */,
+				80B8D6E327219A8C00902D93 /* OfflineStorageTests.xctest */,
+				80B8D6ED27219A8C00902D93 /* OfflineStorageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80B8D6CC27219A8B00902D93 /* OfflineStorage */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D6CD27219A8B00902D93 /* AppDelegate.swift */,
+				80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */,
+				80B8D6D127219A8B00902D93 /* ViewController.swift */,
+				80B8D6D327219A8B00902D93 /* Main.storyboard */,
+				80B8D6D927219A8C00902D93 /* Assets.xcassets */,
+				80B8D6DB27219A8C00902D93 /* LaunchScreen.storyboard */,
+				80B8D6DE27219A8C00902D93 /* Info.plist */,
+				80B8D6D627219A8B00902D93 /* OfflineStorage.xcdatamodeld */,
+			);
+			path = OfflineStorage;
+			sourceTree = "<group>";
+		};
+		80B8D6E627219A8C00902D93 /* OfflineStorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D6E727219A8C00902D93 /* OfflineStorageTests.swift */,
+			);
+			path = OfflineStorageTests;
+			sourceTree = "<group>";
+		};
+		80B8D6F027219A8C00902D93 /* OfflineStorageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D6F127219A8C00902D93 /* OfflineStorageUITests.swift */,
+				80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */,
+			);
+			path = OfflineStorageUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80B8D6C927219A8B00902D93 /* OfflineStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B8D6F727219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorage" */;
+			buildPhases = (
+				80B8D6C627219A8B00902D93 /* Sources */,
+				80B8D6C727219A8B00902D93 /* Frameworks */,
+				80B8D6C827219A8B00902D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OfflineStorage;
+			productName = OfflineStorage;
+			productReference = 80B8D6CA27219A8B00902D93 /* OfflineStorage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80B8D6E227219A8C00902D93 /* OfflineStorageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B8D6FA27219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorageTests" */;
+			buildPhases = (
+				80B8D6DF27219A8C00902D93 /* Sources */,
+				80B8D6E027219A8C00902D93 /* Frameworks */,
+				80B8D6E127219A8C00902D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B8D6E527219A8C00902D93 /* PBXTargetDependency */,
+			);
+			name = OfflineStorageTests;
+			productName = OfflineStorageTests;
+			productReference = 80B8D6E327219A8C00902D93 /* OfflineStorageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80B8D6EC27219A8C00902D93 /* OfflineStorageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B8D6FD27219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorageUITests" */;
+			buildPhases = (
+				80B8D6E927219A8C00902D93 /* Sources */,
+				80B8D6EA27219A8C00902D93 /* Frameworks */,
+				80B8D6EB27219A8C00902D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B8D6EF27219A8C00902D93 /* PBXTargetDependency */,
+			);
+			name = OfflineStorageUITests;
+			productName = OfflineStorageUITests;
+			productReference = 80B8D6ED27219A8C00902D93 /* OfflineStorageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80B8D6C227219A8B00902D93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					80B8D6C927219A8B00902D93 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					80B8D6E227219A8C00902D93 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 80B8D6C927219A8B00902D93;
+					};
+					80B8D6EC27219A8C00902D93 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 80B8D6C927219A8B00902D93;
+					};
+				};
+			};
+			buildConfigurationList = 80B8D6C527219A8B00902D93 /* Build configuration list for PBXProject "OfflineStorage" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80B8D6C127219A8B00902D93;
+			productRefGroup = 80B8D6CB27219A8B00902D93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80B8D6C927219A8B00902D93 /* OfflineStorage */,
+				80B8D6E227219A8C00902D93 /* OfflineStorageTests */,
+				80B8D6EC27219A8C00902D93 /* OfflineStorageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B8D6C827219A8B00902D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B8D6DD27219A8C00902D93 /* LaunchScreen.storyboard in Resources */,
+				80B8D6DA27219A8C00902D93 /* Assets.xcassets in Resources */,
+				80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6E127219A8C00902D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6EB27219A8C00902D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80B8D6C627219A8B00902D93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B8D6D227219A8B00902D93 /* ViewController.swift in Sources */,
+				80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */,
+				80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */,
+				80B8D6D827219A8B00902D93 /* OfflineStorage.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6DF27219A8C00902D93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B8D6E827219A8C00902D93 /* OfflineStorageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B8D6E927219A8C00902D93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B8D6F427219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift in Sources */,
+				80B8D6F227219A8C00902D93 /* OfflineStorageUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80B8D6E527219A8C00902D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B8D6C927219A8B00902D93 /* OfflineStorage */;
+			targetProxy = 80B8D6E427219A8C00902D93 /* PBXContainerItemProxy */;
+		};
+		80B8D6EF27219A8C00902D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B8D6C927219A8B00902D93 /* OfflineStorage */;
+			targetProxy = 80B8D6EE27219A8C00902D93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80B8D6D327219A8B00902D93 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B8D6D427219A8B00902D93 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80B8D6DB27219A8C00902D93 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B8D6DC27219A8C00902D93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80B8D6F527219A8C00902D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80B8D6F627219A8C00902D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80B8D6F827219A8C00902D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OfflineStorage/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80B8D6F927219A8C00902D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OfflineStorage/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80B8D6FB27219A8C00902D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfflineStorage.app/OfflineStorage";
+			};
+			name = Debug;
+		};
+		80B8D6FC27219A8C00902D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfflineStorage.app/OfflineStorage";
+			};
+			name = Release;
+		};
+		80B8D6FE27219A8C00902D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OfflineStorage;
+			};
+			name = Debug;
+		};
+		80B8D6FF27219A8C00902D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unit.OfflineStorageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OfflineStorage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80B8D6C527219A8B00902D93 /* Build configuration list for PBXProject "OfflineStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B8D6F527219A8C00902D93 /* Debug */,
+				80B8D6F627219A8C00902D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B8D6F727219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B8D6F827219A8C00902D93 /* Debug */,
+				80B8D6F927219A8C00902D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B8D6FA27219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B8D6FB27219A8C00902D93 /* Debug */,
+				80B8D6FC27219A8C00902D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B8D6FD27219A8C00902D93 /* Build configuration list for PBXNativeTarget "OfflineStorageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B8D6FE27219A8C00902D93 /* Debug */,
+				80B8D6FF27219A8C00902D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80B8D6D627219A8B00902D93 /* OfflineStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80B8D6D727219A8B00902D93 /* OfflineStorage.xcdatamodel */,
+			);
+			currentVersion = 80B8D6D727219A8B00902D93 /* OfflineStorage.xcdatamodel */;
+			path = OfflineStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80B8D6C227219A8B00902D93 /* Project object */;
+}
