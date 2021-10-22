@@ -32,8 +32,16 @@ class ReminderViewController: UIViewController {
     }
     
     @IBAction func addReminderTap() {
+        pushToAddModifyView(for: .add, at: nil)
+    }
+    
+    func pushToAddModifyView(for type: AddAlarmScreenStatus, at index: Int?) {
         let addAlarmVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddAlarmViewController") as! AddAlarmViewController
         addAlarmVC.screenType = .reminders
+        addAlarmVC.screenStatus = type
+        if let index = index {
+            addAlarmVC.reminderRecord = viewModel.remindersList[index]
+        }
         addAlarmVC.delegate = self
         self.present(addAlarmVC, animated: true, completion: nil)
     }
@@ -52,6 +60,10 @@ extension ReminderViewController: UITableViewDelegate, UITableViewDataSource {
         cell.tag = indexPath.row
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushToAddModifyView(for: .modify, at: indexPath.row)
+    }
 }
 
 // MARK: - AddRecords Delegate
@@ -67,7 +79,7 @@ extension ReminderViewController: AddRecordsDelegate {
             viewModel.addRecords(date: date, title: title)
         } else {
             if let record = record as? Reminders {
-                viewModel.modifyRecord(record: record, time: date, title: title ?? "", isCompleted: nil)
+                viewModel.modifyRecord(record: record, time: date, title: title ?? "", isCompleted: false)
             }
         }
     }

@@ -26,6 +26,7 @@ class AddAlarmViewController: UIViewController {
     var screenStatus: AddAlarmScreenStatus = .add
     var record: Alarms?
     var eventRecord: Events?
+    var reminderRecord: Reminders?
     var delegate: AddRecordsDelegate?
     
     override func viewDidLoad() {
@@ -47,10 +48,14 @@ class AddAlarmViewController: UIViewController {
             reminderEventTitle.isHidden = false
             reminderEventTitle.placeholder = "Event Title"
             if screenStatus == .modify {
-                prefillView()
+                prefillViewForEvents()
             }
         } else if screenType == .reminders {
             reminderEventTitle.isHidden = false
+            
+            if screenStatus == .modify {
+                reminderEventTitle.text = reminderRecord?.title
+            }
         } else {
             datePicker.datePickerMode = .time
         }
@@ -58,7 +63,7 @@ class AddAlarmViewController: UIViewController {
         addButton.setTitle(screenStatus == .modify ? "Modify" : "Add", for: .normal)
     }
     
-    func prefillView() {
+    func prefillViewForEvents() {
         reminderEventTitle.text = eventRecord?.title
         eventType.text = eventRecord?.type
         eventLocation.text = eventRecord?.location
@@ -72,7 +77,13 @@ class AddAlarmViewController: UIViewController {
     
     @IBAction func addAlarmTapped() {
         if screenStatus == .modify {
-            delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: eventRecord)
+            if screenType == .events {
+                delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: eventRecord)
+            } else if screenType == .reminders {
+                delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: reminderRecord)
+            } else {
+                delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: record)
+            }
             self.dismiss(animated: true, completion: nil)
             return
         }
@@ -85,7 +96,13 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func deleteButtonTap() {
-        delegate?.deleteRecord(for: eventRecord)
+        if screenType == .events {
+            delegate?.deleteRecord(for: eventRecord)
+        } else if screenType == .reminders {
+            delegate?.deleteRecord(for: reminderRecord)
+        } else {
+            delegate?.deleteRecord(for: record)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }
