@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800FE8B42722D36B00A73E42 /* Alarms+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8AE2722D36B00A73E42 /* Alarms+CoreDataClass.swift */; };
+		800FE8B52722D36B00A73E42 /* Alarms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8AF2722D36B00A73E42 /* Alarms+CoreDataProperties.swift */; };
+		800FE8B62722D36B00A73E42 /* Events+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B02722D36B00A73E42 /* Events+CoreDataClass.swift */; };
+		800FE8B72722D36B00A73E42 /* Events+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B12722D36B00A73E42 /* Events+CoreDataProperties.swift */; };
+		800FE8B82722D36B00A73E42 /* Reminders+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */; };
+		800FE8B92722D36B00A73E42 /* Reminders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */; };
 		80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CD27219A8B00902D93 /* AppDelegate.swift */; };
 		80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */; };
-		80B8D6D227219A8B00902D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6D127219A8B00902D93 /* ViewController.swift */; };
 		80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D327219A8B00902D93 /* Main.storyboard */; };
 		80B8D6D827219A8B00902D93 /* OfflineStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6D627219A8B00902D93 /* OfflineStorage.xcdatamodeld */; };
 		80B8D6DA27219A8C00902D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D927219A8C00902D93 /* Assets.xcassets */; };
@@ -17,6 +22,18 @@
 		80B8D6E827219A8C00902D93 /* OfflineStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6E727219A8C00902D93 /* OfflineStorageTests.swift */; };
 		80B8D6F227219A8C00902D93 /* OfflineStorageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6F127219A8C00902D93 /* OfflineStorageUITests.swift */; };
 		80B8D6F427219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */; };
+		80B8D70527219B4000902D93 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D70427219B4000902D93 /* ReminderViewController.swift */; };
+		80B8D70727219B4700902D93 /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D70627219B4700902D93 /* AlarmsViewController.swift */; };
+		80B8D70927219B4E00902D93 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D70827219B4E00902D93 /* EventsViewController.swift */; };
+		80B8D7162721A3D300902D93 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D7142721A3D300902D93 /* AlarmTableViewCell.swift */; };
+		80B8D7172721A3D300902D93 /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D7152721A3D300902D93 /* AlarmTableViewCell.xib */; };
+		80B8D71B2721AEDB00902D93 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D71A2721AEDB00902D93 /* AddButton.swift */; };
+		80B8D71D2721B3B500902D93 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */; };
+		80B8D7212721B71E00902D93 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D71F2721B71E00902D93 /* ReminderTableViewCell.swift */; };
+		80B8D7222721B71E00902D93 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D7202721B71E00902D93 /* ReminderTableViewCell.xib */; };
+		80B8D7252721BC7100902D93 /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D7242721BC7100902D93 /* AppEnums.swift */; };
+		80B8D7292721D80A00902D93 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D7272721D80A00902D93 /* EventsTableViewCell.swift */; };
+		80B8D72A2721D80A00902D93 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D7282721D80A00902D93 /* EventsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800FE8AE2722D36B00A73E42 /* Alarms+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarms+CoreDataClass.swift"; sourceTree = "<group>"; };
+		800FE8AF2722D36B00A73E42 /* Alarms+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarms+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		800FE8B02722D36B00A73E42 /* Events+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataClass.swift"; sourceTree = "<group>"; };
+		800FE8B12722D36B00A73E42 /* Events+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataClass.swift"; sourceTree = "<group>"; };
+		800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		80B8D6CA27219A8B00902D93 /* OfflineStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B8D6CD27219A8B00902D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80B8D6D127219A8B00902D93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80B8D6D427219A8B00902D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B8D6D727219A8B00902D93 /* OfflineStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfflineStorage.xcdatamodel; sourceTree = "<group>"; };
 		80B8D6D927219A8C00902D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +73,18 @@
 		80B8D6ED27219A8C00902D93 /* OfflineStorageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineStorageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B8D6F127219A8C00902D93 /* OfflineStorageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageUITests.swift; sourceTree = "<group>"; };
 		80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80B8D70427219B4000902D93 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		80B8D70627219B4700902D93 /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
+		80B8D70827219B4E00902D93 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		80B8D7142721A3D300902D93 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		80B8D7152721A3D300902D93 /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
+		80B8D71A2721AEDB00902D93 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
+		80B8D71F2721B71E00902D93 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		80B8D7202721B71E00902D93 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
+		80B8D7242721BC7100902D93 /* AppEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnums.swift; sourceTree = "<group>"; };
+		80B8D7272721D80A00902D93 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		80B8D7282721D80A00902D93 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +115,12 @@
 		80B8D6C127219A8B00902D93 = {
 			isa = PBXGroup;
 			children = (
+				800FE8AE2722D36B00A73E42 /* Alarms+CoreDataClass.swift */,
+				800FE8AF2722D36B00A73E42 /* Alarms+CoreDataProperties.swift */,
+				800FE8B02722D36B00A73E42 /* Events+CoreDataClass.swift */,
+				800FE8B12722D36B00A73E42 /* Events+CoreDataProperties.swift */,
+				800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */,
+				800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */,
 				80B8D6CC27219A8B00902D93 /* OfflineStorage */,
 				80B8D6E627219A8C00902D93 /* OfflineStorageTests */,
 				80B8D6F027219A8C00902D93 /* OfflineStorageUITests */,
@@ -101,9 +141,10 @@
 		80B8D6CC27219A8B00902D93 /* OfflineStorage */ = {
 			isa = PBXGroup;
 			children = (
+				80B8D7182721AEC800902D93 /* Helper */,
+				80B8D70027219AF500902D93 /* Modules */,
 				80B8D6CD27219A8B00902D93 /* AppDelegate.swift */,
 				80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */,
-				80B8D6D127219A8B00902D93 /* ViewController.swift */,
 				80B8D6D327219A8B00902D93 /* Main.storyboard */,
 				80B8D6D927219A8C00902D93 /* Assets.xcassets */,
 				80B8D6DB27219A8C00902D93 /* LaunchScreen.storyboard */,
@@ -128,6 +169,120 @@
 				80B8D6F327219A8C00902D93 /* OfflineStorageUITestsLaunchTests.swift */,
 			);
 			path = OfflineStorageUITests;
+			sourceTree = "<group>";
+		};
+		80B8D70027219AF500902D93 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D70227219B1200902D93 /* Events */,
+				80B8D70127219B0B00902D93 /* Reminders */,
+				80B8D70327219B1900902D93 /* Alarms */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		80B8D70127219B0B00902D93 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D70C27219B8300902D93 /* Views */,
+			);
+			path = Reminders;
+			sourceTree = "<group>";
+		};
+		80B8D70227219B1200902D93 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D70B27219B7F00902D93 /* Views */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		80B8D70327219B1900902D93 /* Alarms */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D70D27219B8B00902D93 /* Views */,
+			);
+			path = Alarms;
+			sourceTree = "<group>";
+		};
+		80B8D70B27219B7F00902D93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7262721D7F400902D93 /* TableViewCells */,
+				80B8D70827219B4E00902D93 /* EventsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80B8D70C27219B8300902D93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D71E2721B6F400902D93 /* TableViewCells */,
+				80B8D70427219B4000902D93 /* ReminderViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80B8D70D27219B8B00902D93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7132721A3C200902D93 /* TableViewCells */,
+				80B8D70627219B4700902D93 /* AlarmsViewController.swift */,
+				80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80B8D7132721A3C200902D93 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7142721A3D300902D93 /* AlarmTableViewCell.swift */,
+				80B8D7152721A3D300902D93 /* AlarmTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		80B8D7182721AEC800902D93 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7232721BC6300902D93 /* Enums */,
+				80B8D7192721AECE00902D93 /* Custom Views */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		80B8D7192721AECE00902D93 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D71A2721AEDB00902D93 /* AddButton.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		80B8D71E2721B6F400902D93 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D71F2721B71E00902D93 /* ReminderTableViewCell.swift */,
+				80B8D7202721B71E00902D93 /* ReminderTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		80B8D7232721BC6300902D93 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7242721BC7100902D93 /* AppEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		80B8D7262721D7F400902D93 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D7272721D80A00902D93 /* EventsTableViewCell.swift */,
+				80B8D7282721D80A00902D93 /* EventsTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +391,10 @@
 			files = (
 				80B8D6DD27219A8C00902D93 /* LaunchScreen.storyboard in Resources */,
 				80B8D6DA27219A8C00902D93 /* Assets.xcassets in Resources */,
+				80B8D72A2721D80A00902D93 /* EventsTableViewCell.xib in Resources */,
 				80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */,
+				80B8D7172721A3D300902D93 /* AlarmTableViewCell.xib in Resources */,
+				80B8D7222721B71E00902D93 /* ReminderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +419,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80B8D6D227219A8B00902D93 /* ViewController.swift in Sources */,
+				80B8D70727219B4700902D93 /* AlarmsViewController.swift in Sources */,
+				800FE8B82722D36B00A73E42 /* Reminders+CoreDataClass.swift in Sources */,
 				80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */,
+				80B8D70527219B4000902D93 /* ReminderViewController.swift in Sources */,
+				800FE8B52722D36B00A73E42 /* Alarms+CoreDataProperties.swift in Sources */,
+				80B8D71D2721B3B500902D93 /* AddAlarmViewController.swift in Sources */,
+				80B8D7292721D80A00902D93 /* EventsTableViewCell.swift in Sources */,
+				800FE8B62722D36B00A73E42 /* Events+CoreDataClass.swift in Sources */,
+				80B8D70927219B4E00902D93 /* EventsViewController.swift in Sources */,
 				80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */,
+				80B8D7162721A3D300902D93 /* AlarmTableViewCell.swift in Sources */,
+				800FE8B72722D36B00A73E42 /* Events+CoreDataProperties.swift in Sources */,
 				80B8D6D827219A8B00902D93 /* OfflineStorage.xcdatamodeld in Sources */,
+				80B8D71B2721AEDB00902D93 /* AddButton.swift in Sources */,
+				80B8D7252721BC7100902D93 /* AppEnums.swift in Sources */,
+				800FE8B42722D36B00A73E42 /* Alarms+CoreDataClass.swift in Sources */,
+				80B8D7212721B71E00902D93 /* ReminderTableViewCell.swift in Sources */,
+				800FE8B92722D36B00A73E42 /* Reminders+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

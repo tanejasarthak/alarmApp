@@ -1,24 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vcr-Wr-cBm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Events-->
+        <scene sceneID="ZzD-IV-pEi">
+            <objects>
+                <viewController storyboardIdentifier="EventsViewController" id="fzX-mn-w9K" customClass="EventsViewController" customModule="OfflineStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xqt-aB-q62">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nOb-4O-GG5">
+                                <rect key="frame" x="0.0" y="94" width="414" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aja-8u-z1l" customClass="AddButton" customModule="OfflineStorage" customModuleProvider="target">
+                                <rect key="frame" x="150" y="738" width="114.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qw3-6v-Ku8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="mO7-aI-U8y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="Add Events"/>
+                                <connections>
+                                    <action selector="addEventTap" destination="fzX-mn-w9K" eventType="touchUpInside" id="m0S-JE-ode"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Event Found! Please Add an Event!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofB-1T-tlf">
+                                <rect key="frame" x="30" y="436" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5GN-IC-OM6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ofB-1T-tlf" firstAttribute="centerY" secondItem="Xqt-aB-q62" secondAttribute="centerY" id="027-Dt-cyU"/>
+                            <constraint firstItem="nOb-4O-GG5" firstAttribute="top" secondItem="5GN-IC-OM6" secondAttribute="top" constant="50" id="2u3-Sv-yB8"/>
+                            <constraint firstItem="5GN-IC-OM6" firstAttribute="bottom" secondItem="nOb-4O-GG5" secondAttribute="bottom" constant="100" id="Hlk-vs-Dpm"/>
+                            <constraint firstItem="nOb-4O-GG5" firstAttribute="leading" secondItem="5GN-IC-OM6" secondAttribute="leading" id="SZi-8P-edU"/>
+                            <constraint firstItem="aja-8u-z1l" firstAttribute="top" secondItem="nOb-4O-GG5" secondAttribute="bottom" constant="25" id="Zk4-Qq-MqA"/>
+                            <constraint firstItem="5GN-IC-OM6" firstAttribute="trailing" secondItem="nOb-4O-GG5" secondAttribute="trailing" id="ixh-v2-HkL"/>
+                            <constraint firstItem="aja-8u-z1l" firstAttribute="centerX" secondItem="Xqt-aB-q62" secondAttribute="centerX" id="pCq-dX-jTN"/>
+                            <constraint firstItem="ofB-1T-tlf" firstAttribute="leading" secondItem="5GN-IC-OM6" secondAttribute="leading" constant="30" id="vil-3g-ILu"/>
+                            <constraint firstItem="5GN-IC-OM6" firstAttribute="trailing" secondItem="ofB-1T-tlf" secondAttribute="trailing" constant="30" id="x8c-9C-bfw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="event (2)" selectedImage="event (2)" id="a2q-SY-3a9"/>
+                    <connections>
+                        <outlet property="noEventLabel" destination="ofB-1T-tlf" id="YaI-un-K5b"/>
+                        <outlet property="tableView" destination="nOb-4O-GG5" id="4EA-1T-LcF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6r-1p-nHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-575" y="438"/>
+        </scene>
+        <!--Reminder-->
+        <scene sceneID="Bfq-fW-8yt">
+            <objects>
+                <viewController storyboardIdentifier="ReminderViewController" id="fh9-gM-uvV" customClass="ReminderViewController" customModule="OfflineStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SKb-vJ-s5n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K3y-lt-n9T">
+                                <rect key="frame" x="0.0" y="94" width="414" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMv-CY-17N" customClass="AddButton" customModule="OfflineStorage" customModuleProvider="target">
+                                <rect key="frame" x="137" y="738" width="140" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qcv-jk-fww"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="Add Reminders"/>
+                                <connections>
+                                    <action selector="addReminderTap" destination="fh9-gM-uvV" eventType="touchUpInside" id="lsF-qX-aPb"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Reminder Found! Please Add an Reminder!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Uy-dLz">
+                                <rect key="frame" x="30" y="424" width="354" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VOc-F3-reC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K3y-lt-n9T" firstAttribute="top" secondItem="VOc-F3-reC" secondAttribute="top" constant="50" id="A4H-lQ-2tg"/>
+                            <constraint firstItem="VOc-F3-reC" firstAttribute="trailing" secondItem="TXx-Uy-dLz" secondAttribute="trailing" constant="30" id="G8L-K2-yQ9"/>
+                            <constraint firstItem="VOc-F3-reC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kMv-CY-17N" secondAttribute="bottom" constant="10" id="KnV-pd-P9R"/>
+                            <constraint firstItem="VOc-F3-reC" firstAttribute="bottom" secondItem="K3y-lt-n9T" secondAttribute="bottom" constant="100" id="LBK-tR-66L"/>
+                            <constraint firstItem="TXx-Uy-dLz" firstAttribute="centerY" secondItem="SKb-vJ-s5n" secondAttribute="centerY" id="Z7F-b2-luX"/>
+                            <constraint firstItem="kMv-CY-17N" firstAttribute="centerX" secondItem="SKb-vJ-s5n" secondAttribute="centerX" id="eHN-1V-k2y"/>
+                            <constraint firstItem="K3y-lt-n9T" firstAttribute="leading" secondItem="VOc-F3-reC" secondAttribute="leading" id="gjK-ck-NYP"/>
+                            <constraint firstItem="kMv-CY-17N" firstAttribute="top" secondItem="K3y-lt-n9T" secondAttribute="bottom" constant="25" id="lxi-g1-JOZ"/>
+                            <constraint firstItem="VOc-F3-reC" firstAttribute="trailing" secondItem="K3y-lt-n9T" secondAttribute="trailing" id="r1J-MX-Rjv"/>
+                            <constraint firstItem="TXx-Uy-dLz" firstAttribute="leading" secondItem="VOc-F3-reC" secondAttribute="leading" constant="30" id="xQE-bG-08k"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reminder" image="reminder (2)" selectedImage="reminder (2)" id="yTh-GN-tQ3"/>
+                    <connections>
+                        <outlet property="noReminderLabel" destination="TXx-Uy-dLz" id="Xd1-ZG-OcV"/>
+                        <outlet property="tableView" destination="K3y-lt-n9T" id="wVL-1Q-kgd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Acr-mL-cd7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1354" y="438"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0sr-xn-oVq">
+            <objects>
+                <tabBarController id="Vcr-Wr-cBm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Xb-F2-bOO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fh9-gM-uvV" kind="relationship" relationship="viewControllers" id="Voa-ZB-x7s"/>
+                        <segue destination="fzX-mn-w9K" kind="relationship" relationship="viewControllers" id="ymB-6x-hQr"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wlv-tp-08O"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kho-ts-0Cj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="-308"/>
+        </scene>
+        <!--Alarms-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmsViewController" id="BYZ-38-t0r" customClass="AlarmsViewController" customModule="OfflineStorage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-e3-35Q">
+                                <rect key="frame" x="0.0" y="94" width="414" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9F-lg-rTf" customClass="AddButton" customModule="OfflineStorage" customModuleProvider="target">
+                                <rect key="frame" x="149" y="738" width="116" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EBc-xM-fP8"/>
+                                    <constraint firstAttribute="height" constant="50" id="S5J-AF-n0w"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="SE7-X1-5y6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="Add Alarms"/>
+                                <connections>
+                                    <action selector="addAlarmTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Z1-3G-tpc"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Alarm Found! Please Add an Alarm!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-ag-wgV">
+                                <rect key="frame" x="30" y="436" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xcs-e3-35Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5dx-Ee-qF3"/>
+                            <constraint firstItem="lHM-ag-wgV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="69f-jG-oXQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xcs-e3-35Q" secondAttribute="trailing" id="6QV-37-rf1"/>
+                            <constraint firstItem="lHM-ag-wgV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7TM-ai-upV"/>
+                            <constraint firstItem="xcs-e3-35Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="CUf-ym-97z"/>
+                            <constraint firstItem="o9F-lg-rTf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MDE-M8-Ge6"/>
+                            <constraint firstItem="o9F-lg-rTf" firstAttribute="top" secondItem="xcs-e3-35Q" secondAttribute="bottom" constant="25" id="OKQ-Nd-Szc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lHM-ag-wgV" secondAttribute="trailing" constant="30" id="UbJ-Gy-33B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xcs-e3-35Q" secondAttribute="bottom" constant="100" id="mOl-aP-IFs"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Alarms" image="alarm (2)" selectedImage="alarm (2)" id="2s0-K5-dfp"/>
+                    <connections>
+                        <outlet property="noAlarmFoundLabel" destination="lHM-ag-wgV" id="hmL-1b-4fT"/>
+                        <outlet property="tableView" destination="xcs-e3-35Q" id="iND-ze-eDe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="229" y="438"/>
+        </scene>
+        <!--Add Alarm View Controller-->
+        <scene sceneID="1dV-XK-wVW">
+            <objects>
+                <viewController storyboardIdentifier="AddAlarmViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="ITT-OG-L6U" customClass="AddAlarmViewController" customModule="OfflineStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMI-eg-8w5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J9Z-6Q-EN5">
+                                <rect key="frame" x="30" y="274" width="354" height="348"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpp-4U-4s4">
+                                        <rect key="frame" x="17" y="0.0" width="320" height="216"/>
+                                    </datePicker>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="klk-qv-lRh">
+                                        <rect key="frame" x="0.0" y="231" width="354" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fMI-eg-8w5" id="uzv-Ub-d8F"/>
+                                        </connections>
+                                    </textField>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIi-so-hCh">
+                                        <rect key="frame" x="0.0" y="231" width="354" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fMI-eg-8w5" id="Em9-vC-cjd"/>
+                                        </connections>
+                                    </textField>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UI-oW-8bC">
+                                        <rect key="frame" x="0.0" y="231" width="354" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fMI-eg-8w5" id="ZTg-c7-RjX"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amt-hv-oBN">
+                                        <rect key="frame" x="131" y="246" width="92" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Alarm"/>
+                                        <connections>
+                                            <action selector="addAlarmTapped" destination="ITT-OG-L6U" eventType="touchUpInside" id="ITd-wt-viZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob5-qA-0hU">
+                                        <rect key="frame" x="146.5" y="312" width="61" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelTapped" destination="ITT-OG-L6U" eventType="touchUpInside" id="1e4-dR-bFk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dIi-so-hCh" firstAttribute="width" secondItem="J9Z-6Q-EN5" secondAttribute="width" id="OMT-hb-wLr"/>
+                                    <constraint firstItem="6UI-oW-8bC" firstAttribute="width" secondItem="J9Z-6Q-EN5" secondAttribute="width" id="Roz-2J-gwN"/>
+                                    <constraint firstItem="klk-qv-lRh" firstAttribute="width" secondItem="J9Z-6Q-EN5" secondAttribute="width" id="hFt-g3-qci"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qak-2j-pG2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qak-2j-pG2" firstAttribute="trailing" secondItem="J9Z-6Q-EN5" secondAttribute="trailing" constant="30" id="LOU-hC-0xl"/>
+                            <constraint firstItem="J9Z-6Q-EN5" firstAttribute="centerY" secondItem="fMI-eg-8w5" secondAttribute="centerY" id="aDj-MQ-b6H"/>
+                            <constraint firstItem="J9Z-6Q-EN5" firstAttribute="leading" secondItem="Qak-2j-pG2" secondAttribute="leading" constant="30" id="bKn-JJ-XrO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="amt-hv-oBN" id="Y99-H7-gL7"/>
+                        <outlet property="backgrounView" destination="J9Z-6Q-EN5" id="u2n-2g-Jp0"/>
+                        <outlet property="datePicker" destination="Cpp-4U-4s4" id="zxf-Dp-nNU"/>
+                        <outlet property="eventLocation" destination="6UI-oW-8bC" id="oXJ-Xz-apS"/>
+                        <outlet property="eventType" destination="dIi-so-hCh" id="CLX-qv-yuF"/>
+                        <outlet property="reminderEventTitle" destination="klk-qv-lRh" id="fj2-3u-jKa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEO-Ms-ExP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-575" y="1103"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="aja-8u-z1l">
+            <size key="intrinsicContentSize" width="114.5" height="31"/>
+        </designable>
+        <designable name="kMv-CY-17N">
+            <size key="intrinsicContentSize" width="140" height="31"/>
+        </designable>
+        <designable name="o9F-lg-rTf">
+            <size key="intrinsicContentSize" width="116" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="alarm (2)" width="21" height="21"/>
+        <image name="event (2)" width="21" height="21"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="reminder (2)" width="21" height="21"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
