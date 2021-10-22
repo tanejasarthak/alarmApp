@@ -50,6 +50,7 @@ class ReminderViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension ReminderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        noReminderLabel.isHidden = !(viewModel.remindersList.count == 0)
         return viewModel.remindersList.count
     }
     

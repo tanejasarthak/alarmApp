@@ -51,6 +51,7 @@ class EventsViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        noEventLabel.isHidden = !(viewModel.eventList.count == 0)
         return viewModel.eventList.count
     }
     

@@ -50,6 +50,7 @@ class AlarmsViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension AlarmsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        noAlarmFoundLabel.isHidden = !(viewModel.alarmList.count == 0)
         return viewModel.alarmList.count
     }
     
