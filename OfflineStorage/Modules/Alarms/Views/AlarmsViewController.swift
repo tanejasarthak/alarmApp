@@ -50,8 +50,16 @@ class AlarmsViewController: UIViewController {
     }
     
     @IBAction func addAlarmTap() {
+        pushToAddRecordsScreen(for: .add, at: nil)
+    }
+    
+    func pushToAddRecordsScreen(for type: AddAlarmScreenStatus, at row: Int?) {
         let addAlarmVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddAlarmViewController") as! AddAlarmViewController
         addAlarmVC.screenType = .alarms
+        addAlarmVC.screenStatus = type
+        if let row = row {
+            addAlarmVC.record = alarmList[row]
+        }
         addAlarmVC.delegate = self
         self.present(addAlarmVC, animated: true, completion: nil)
     }
@@ -70,10 +78,27 @@ extension AlarmsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushToAddRecordsScreen(for: .modify, at: indexPath.row)
+    }
 }
 
 // MARK: - AddRecords Delegate
 extension AlarmsViewController: AddRecordsDelegate {
+    func deleteRecord(for record: Alarms?) {
+        guard let record = record else {
+            return
+        }
+        context.delete(record)
+        do {
+            try context.save()
+            getAllAlarmsList()
+        } catch {
+            
+        }
+    }
+    
     func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?) {
         guard let date = date else { return }
         let item = Alarms(context: context)

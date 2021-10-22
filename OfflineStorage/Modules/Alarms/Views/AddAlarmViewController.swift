@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddRecordsDelegate {
     func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?)
+    func deleteRecord(for record: Alarms?)
 }
 
 class AddAlarmViewController: UIViewController {
@@ -18,9 +19,12 @@ class AddAlarmViewController: UIViewController {
     @IBOutlet weak var eventType: UITextField!
     @IBOutlet weak var eventLocation: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var deleteRecordButton: UIButton!
     @IBOutlet weak var backgrounView: UIView!
     
     var screenType: ScreenType?
+    var screenStatus: AddAlarmScreenStatus = .add
+    var record: Alarms?
     var delegate: AddRecordsDelegate?
     
     override func viewDidLoad() {
@@ -46,6 +50,7 @@ class AddAlarmViewController: UIViewController {
         } else {
             datePicker.datePickerMode = .time
         }
+        deleteRecordButton.isHidden = screenStatus != .modify
     }
     
     func setupBackgroundView() {
@@ -60,6 +65,11 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func cancelTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButtonTap() {
+        delegate?.deleteRecord(for: record)
         self.dismiss(animated: true, completion: nil)
     }
 }

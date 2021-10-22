@@ -12,3 +12,8 @@ enum ScreenType {
     case reminders
     case events
 }
+
+enum AddAlarmScreenStatus {
+    case add
+    case modify
+}
