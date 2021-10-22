@@ -14,6 +14,7 @@
 		800FE8B82722D36B00A73E42 /* Reminders+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */; };
 		800FE8B92722D36B00A73E42 /* Reminders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */; };
 		800FE8BC2722E5F700A73E42 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8BB2722E5F700A73E42 /* AlarmViewModel.swift */; };
+		800FE8C02722F35800A73E42 /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8BF2722F35800A73E42 /* RemindersViewModel.swift */; };
 		80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CD27219A8B00902D93 /* AppDelegate.swift */; };
 		80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */; };
 		80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D327219A8B00902D93 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataClass.swift"; sourceTree = "<group>"; };
 		800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		800FE8BB2722E5F700A73E42 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		800FE8BF2722F35800A73E42 /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
 		80B8D6CA27219A8B00902D93 /* OfflineStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B8D6CD27219A8B00902D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 				80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		800FE8BE2722F34700A73E42 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				800FE8BF2722F35800A73E42 /* RemindersViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		80B8D6C127219A8B00902D93 = {
@@ -203,6 +213,7 @@
 		80B8D70127219B0B00902D93 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				800FE8BE2722F34700A73E42 /* View Model */,
 				80B8D70C27219B8300902D93 /* Views */,
 			);
 			path = Reminders;
@@ -442,6 +453,7 @@
 				800FE8B82722D36B00A73E42 /* Reminders+CoreDataClass.swift in Sources */,
 				80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */,
 				80B8D70527219B4000902D93 /* ReminderViewController.swift in Sources */,
+				800FE8C02722F35800A73E42 /* RemindersViewModel.swift in Sources */,
 				800FE8B52722D36B00A73E42 /* Alarms+CoreDataProperties.swift in Sources */,
 				80B8D71D2721B3B500902D93 /* AddAlarmViewController.swift in Sources */,
 				800FE8BC2722E5F700A73E42 /* AlarmViewModel.swift in Sources */,

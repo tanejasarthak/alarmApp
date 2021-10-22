@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 protocol AlarmViewModelDelegate {
     func reloadTableView()
 }
@@ -17,7 +16,6 @@ class AlarmViewModel {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var alarmList = [Alarms]()
     var delegate: AlarmViewModelDelegate?
-    
     
     // MARK: - CoreData Operations
     func getAllAlarmsList() {
@@ -43,7 +41,7 @@ class AlarmViewModel {
         }
     }
     
-    func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?) {
+    func addRecords(date: Date?) {
         guard let date = date else { return }
         let item = Alarms(context: context)
         item.time = date
@@ -58,6 +56,19 @@ class AlarmViewModel {
     
     func modifyRecord(record: Alarms, isAlarmActive: Bool) {
         record.isActive = isAlarmActive
+        do {
+            try context.save()
+            getAllAlarmsList()
+        } catch {
+            
+        }
+    }
+    
+    func changeRecord(record: Alarms?, time: Date?) {
+        guard let time = time, let record = record else {
+            return
+        }
+        record.time = time
         do {
             try context.save()
             getAllAlarmsList()

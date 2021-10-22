@@ -68,12 +68,20 @@ extension AlarmsViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - AddRecords Delegate
 extension AlarmsViewController: AddRecordsDelegate {
-    func deleteRecord(for record: Alarms?) {
-        viewModel.deleteRecord(for: record)
+    func addModifyRecords<T>(date: Date?, title: String?, eventType: String?, eventLocation: String?, isAdd: Bool, for record: T?) {
+        if isAdd {
+            viewModel.addRecords(date: date)
+        } else {
+            if let record = record as? Alarms {
+                viewModel.changeRecord(record: record, time: date)
+            }
+        }
     }
     
-    func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?) {
-        viewModel.addRecords(date: date, title: title, eventType: eventType, eventLocation: eventLocation)
+    func deleteRecord<T>(for record: T?) {
+        if let record = record as? Alarms {
+            viewModel.deleteRecord(for: record)
+        }
     }
 }
 

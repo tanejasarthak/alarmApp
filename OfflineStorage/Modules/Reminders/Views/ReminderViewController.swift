@@ -13,17 +13,16 @@ class ReminderViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noReminderLabel: UILabel!
     
+    // Public Properties
+    var viewModel = RemindersViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         configureTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        viewModel.delegate = self
+        viewModel.getAllRemindersList()
     }
     
     func configureTableView() {
@@ -35,6 +34,7 @@ class ReminderViewController: UIViewController {
     @IBAction func addReminderTap() {
         let addAlarmVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddAlarmViewController") as! AddAlarmViewController
         addAlarmVC.screenType = .reminders
+        addAlarmVC.delegate = self
         self.present(addAlarmVC, animated: true, completion: nil)
     }
 }
@@ -42,11 +42,49 @@ class ReminderViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension ReminderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.remindersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderTableViewCell", for: indexPath) as! ReminderTableViewCell
+        cell.configureView(reminders: viewModel.remindersList[indexPath.row])
+        cell.delegate = self
+        cell.tag = indexPath.row
         return cell
+    }
+}
+
+// MARK: - AddRecords Delegate
+extension ReminderViewController: AddRecordsDelegate {
+    func deleteRecord<T>(for record: T?) {
+        if let record = record as? Reminders {
+            viewModel.deleteRecord(for: record)
+        }
+    }
+    
+    func addModifyRecords<T>(date: Date?, title: String?, eventType: String?, eventLocation: String?, isAdd: Bool, for record: T?) {
+        if isAdd {
+            viewModel.addRecords(date: date, title: title)
+        } else {
+            if let record = record as? Reminders {
+                viewModel.modifyRecord(record: record, time: date, title: title ?? "", isCompleted: nil)
+            }
+        }
+    }
+}
+
+// MARK: - ReminderTableViewCell Delegate
+extension ReminderViewController: ReminderTableViewCellDelegate {
+    func markAsDoneTapped(tag: Int) {
+        viewModel.modifyRecord(record: viewModel.remindersList[tag], time: nil, title: nil, isCompleted: true)
+    }
+}
+
+// MARK: - ReminderViewModel Delegate
+extension ReminderViewController: RemindersViewModelDelegate {
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

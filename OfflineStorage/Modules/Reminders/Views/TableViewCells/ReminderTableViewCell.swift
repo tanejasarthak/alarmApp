@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ReminderTableViewCellDelegate {
+    func markAsDoneTapped(tag: Int)
+}
+
 class ReminderTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
@@ -14,6 +18,9 @@ class ReminderTableViewCell: UITableViewCell {
     @IBOutlet weak var reminderDueDateLabel: UILabel!
     @IBOutlet weak var markAsDoneBtn: UIButton!
     
+    // Public Properties
+    let dateFormatter = DateFormatter()
+    var delegate: ReminderTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +33,19 @@ class ReminderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureView(reminderTitle: String, reminderDueDate: String, isDone: Bool) {
-        reminderTitleLabel.text = reminderTitle
-        reminderDueDateLabel.text = reminderDueDate
+    func configureView(reminders: Reminders?) {
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        
+        reminderTitleLabel.text = reminders?.title
+        reminderDueDateLabel.text = dateFormatter.string(from: reminders?.date ?? Date())
+        markAsDoneBtn.isEnabled = !(reminders?.isCompleted ?? false)
+        markAsDoneBtn.setTitle("Mark as Done", for: .normal)
+        markAsDoneBtn.setTitle("Completed", for: .disabled)
     }
     
     @IBAction func markAsDoneTap(_ sender: Any) {
+        delegate?.markAsDoneTapped(tag: tag)
     }
     
 }

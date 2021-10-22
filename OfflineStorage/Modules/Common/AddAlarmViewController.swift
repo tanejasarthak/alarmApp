@@ -8,8 +8,8 @@
 import UIKit
 
 protocol AddRecordsDelegate {
-    func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?)
-    func deleteRecord(for record: Alarms?)
+    func addModifyRecords<T>(date: Date?, title: String?, eventType: String?, eventLocation: String?, isAdd: Bool, for record: T?)
+    func deleteRecord<T>(for record: T?)
 }
 
 class AddAlarmViewController: UIViewController {
@@ -51,6 +51,7 @@ class AddAlarmViewController: UIViewController {
             datePicker.datePickerMode = .time
         }
         deleteRecordButton.isHidden = screenStatus != .modify
+        addButton.setTitle(screenStatus == .modify ? "Modify" : "Add", for: .normal)
     }
     
     func setupBackgroundView() {
@@ -60,7 +61,12 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func addAlarmTapped() {
-        delegate?.addRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text)
+        if screenStatus == .modify {
+            delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: record)
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: true, for: record)
         self.dismiss(animated: true, completion: nil)
     }
     

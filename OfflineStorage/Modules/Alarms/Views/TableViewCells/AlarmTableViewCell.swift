@@ -33,7 +33,6 @@ class AlarmTableViewCell: UITableViewCell {
     }
     
     func configureView(alarmDetails: Alarms) {
-       // dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         if let alarmTime = alarmDetails.time {
