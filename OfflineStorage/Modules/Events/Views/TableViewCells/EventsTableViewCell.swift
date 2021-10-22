@@ -28,15 +28,15 @@ class EventsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureView(eventTitle: String, eventType: String, eventLocation: String, dateTime: Date?) {
-        eventTitleLabel.text = eventTitle
-        eventTypeLabel.text = eventType
-        eventLoctionLabel.text = eventLocation
+    func configureView(record: Events) {
+        eventTitleLabel.text = record.title
+        eventTypeLabel.text = record.type
+        eventLoctionLabel.text = record.location
         
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
-        if let dateTime = dateTime {
-            dateFormatter.string(from: dateTime)
+        if let date = record.date {
+            dateTimeLabel.text = dateFormatter.string(from: date)
         }
     }
 }

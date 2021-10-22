@@ -25,6 +25,7 @@ class AddAlarmViewController: UIViewController {
     var screenType: ScreenType?
     var screenStatus: AddAlarmScreenStatus = .add
     var record: Alarms?
+    var eventRecord: Events?
     var delegate: AddRecordsDelegate?
     
     override func viewDidLoad() {
@@ -45,6 +46,9 @@ class AddAlarmViewController: UIViewController {
             eventLocation.isHidden = false
             reminderEventTitle.isHidden = false
             reminderEventTitle.placeholder = "Event Title"
+            if screenStatus == .modify {
+                prefillView()
+            }
         } else if screenType == .reminders {
             reminderEventTitle.isHidden = false
         } else {
@@ -52,6 +56,12 @@ class AddAlarmViewController: UIViewController {
         }
         deleteRecordButton.isHidden = screenStatus != .modify
         addButton.setTitle(screenStatus == .modify ? "Modify" : "Add", for: .normal)
+    }
+    
+    func prefillView() {
+        reminderEventTitle.text = eventRecord?.title
+        eventType.text = eventRecord?.type
+        eventLocation.text = eventRecord?.location
     }
     
     func setupBackgroundView() {
@@ -62,11 +72,11 @@ class AddAlarmViewController: UIViewController {
     
     @IBAction func addAlarmTapped() {
         if screenStatus == .modify {
-            delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: record)
+            delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: false, for: eventRecord)
             self.dismiss(animated: true, completion: nil)
             return
         }
-        delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: true, for: record)
+        delegate?.addModifyRecords(date: datePicker.date, title: reminderEventTitle.text, eventType: eventType.text, eventLocation: eventLocation.text, isAdd: true, for: eventRecord)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -75,7 +85,7 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func deleteButtonTap() {
-        delegate?.deleteRecord(for: record)
+        delegate?.deleteRecord(for: eventRecord)
         self.dismiss(animated: true, completion: nil)
     }
 }

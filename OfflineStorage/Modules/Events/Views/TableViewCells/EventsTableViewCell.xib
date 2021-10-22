@@ -56,6 +56,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateTimeLabel" destination="SXH-DP-obt" id="3Et-M8-5RV"/>
                 <outlet property="eventLoctionLabel" destination="TVg-vF-MOH" id="IRX-EX-bkm"/>
                 <outlet property="eventTitleLabel" destination="G2C-8V-O8B" id="KEm-Oo-w7B"/>
                 <outlet property="eventTypeLabel" destination="KbF-ZW-apA" id="xtx-S4-fXg"/>
