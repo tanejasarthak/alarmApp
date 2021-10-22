@@ -13,6 +13,10 @@ class EventsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noEventLabel: UILabel!
     
+    // Public Properties
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var eventList = [Events]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +46,7 @@ class EventsViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return eventList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

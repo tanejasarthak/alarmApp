@@ -32,13 +32,13 @@ class AlarmTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureView(alarmTime: Date?, isAlarmActive: Bool) {
+    func configureView(alarmDetails: Alarms) {
        // dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        if let alarmTime = alarmTime {
+        if let alarmTime = alarmDetails.time {
             alarmLabel.text = dateFormatter.string(from: alarmTime)
-            alarmOnOffSwitch.isOn = isAlarmActive
+            alarmOnOffSwitch.isOn = alarmDetails.isActive
         }
     }
     

@@ -13,6 +13,7 @@
 		800FE8B72722D36B00A73E42 /* Events+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B12722D36B00A73E42 /* Events+CoreDataProperties.swift */; };
 		800FE8B82722D36B00A73E42 /* Reminders+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */; };
 		800FE8B92722D36B00A73E42 /* Reminders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */; };
+		800FE8BC2722E5F700A73E42 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE8BB2722E5F700A73E42 /* AlarmViewModel.swift */; };
 		80B8D6CE27219A8B00902D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CD27219A8B00902D93 /* AppDelegate.swift */; };
 		80B8D6D027219A8B00902D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */; };
 		80B8D6D527219A8B00902D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B8D6D327219A8B00902D93 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		800FE8B12722D36B00A73E42 /* Events+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		800FE8B22722D36B00A73E42 /* Reminders+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataClass.swift"; sourceTree = "<group>"; };
 		800FE8B32722D36B00A73E42 /* Reminders+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		800FE8BB2722E5F700A73E42 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		80B8D6CA27219A8B00902D93 /* OfflineStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B8D6CD27219A8B00902D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B8D6CF27219A8B00902D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800FE8BA2722E5E800A73E42 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				800FE8BB2722E5F700A73E42 /* AlarmViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		800FE8BD2722F2ED00A73E42 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		80B8D6C127219A8B00902D93 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +192,7 @@
 		80B8D70027219AF500902D93 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				800FE8BD2722F2ED00A73E42 /* Common */,
 				80B8D70227219B1200902D93 /* Events */,
 				80B8D70127219B0B00902D93 /* Reminders */,
 				80B8D70327219B1900902D93 /* Alarms */,
@@ -200,6 +219,7 @@
 		80B8D70327219B1900902D93 /* Alarms */ = {
 			isa = PBXGroup;
 			children = (
+				800FE8BA2722E5E800A73E42 /* View Model */,
 				80B8D70D27219B8B00902D93 /* Views */,
 			);
 			path = Alarms;
@@ -228,7 +248,6 @@
 			children = (
 				80B8D7132721A3C200902D93 /* TableViewCells */,
 				80B8D70627219B4700902D93 /* AlarmsViewController.swift */,
-				80B8D71C2721B3B500902D93 /* AddAlarmViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +444,7 @@
 				80B8D70527219B4000902D93 /* ReminderViewController.swift in Sources */,
 				800FE8B52722D36B00A73E42 /* Alarms+CoreDataProperties.swift in Sources */,
 				80B8D71D2721B3B500902D93 /* AddAlarmViewController.swift in Sources */,
+				800FE8BC2722E5F700A73E42 /* AlarmViewModel.swift in Sources */,
 				80B8D7292721D80A00902D93 /* EventsTableViewCell.swift in Sources */,
 				800FE8B62722D36B00A73E42 /* Events+CoreDataClass.swift in Sources */,
 				80B8D70927219B4E00902D93 /* EventsViewController.swift in Sources */,

@@ -14,39 +14,21 @@ class AlarmsViewController: UIViewController {
     @IBOutlet weak var noAlarmFoundLabel: UILabel!
     
     // Public Properties
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var alarmList = [Alarms]()
+    var viewModel = AlarmViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         configureTableView()
-        getAllAlarmsList()
+        viewModel.delegate = self
+        viewModel.getAllAlarmsList()
     }
 
     func configureTableView() {
         tableView.register(UINib(nibName: "AlarmTableViewCell", bundle: nil), forCellReuseIdentifier: "AlarmTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    func getAllAlarmsList() {
-        do {
-            alarmList = try context.fetch(Alarms.fetchRequest())
-        } catch {
-            
-        }
-        sortAlarmList()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
-    func sortAlarmList() {
-        alarmList = alarmList.sorted { alarmOne, alarmTwo in
-            return alarmOne.time ?? Date() < alarmTwo.time ?? Date()
-        }
     }
     
     @IBAction func addAlarmTap() {
@@ -58,7 +40,7 @@ class AlarmsViewController: UIViewController {
         addAlarmVC.screenType = .alarms
         addAlarmVC.screenStatus = type
         if let row = row {
-            addAlarmVC.record = alarmList[row]
+            addAlarmVC.record = viewModel.alarmList[row]
         }
         addAlarmVC.delegate = self
         self.present(addAlarmVC, animated: true, completion: nil)
@@ -68,12 +50,12 @@ class AlarmsViewController: UIViewController {
 // MARK: - UITableViewDelegate and UITableViewDatasource
 extension AlarmsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarmList.count
+        return viewModel.alarmList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmTableViewCell", for: indexPath) as! AlarmTableViewCell
-        cell.configureView(alarmTime: alarmList[indexPath.row].time, isAlarmActive: alarmList[indexPath.row].isActive)
+        cell.configureView(alarmDetails: viewModel.alarmList[indexPath.row])
         cell.tag = indexPath.row
         cell.delegate = self
         return cell
@@ -87,41 +69,26 @@ extension AlarmsViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - AddRecords Delegate
 extension AlarmsViewController: AddRecordsDelegate {
     func deleteRecord(for record: Alarms?) {
-        guard let record = record else {
-            return
-        }
-        context.delete(record)
-        do {
-            try context.save()
-            getAllAlarmsList()
-        } catch {
-            
-        }
+        viewModel.deleteRecord(for: record)
     }
     
     func addRecords(date: Date?, title: String?, eventType: String?, eventLocation: String?) {
-        guard let date = date else { return }
-        let item = Alarms(context: context)
-        item.time = date
-        item.isActive = true
-        do {
-            try context.save()
-            getAllAlarmsList()
-        } catch {
-            
-        }
+        viewModel.addRecords(date: date, title: title, eventType: eventType, eventLocation: eventLocation)
     }
 }
 
 // MARK: - AlarmTableView Delegate
 extension AlarmsViewController: AlarmTableViewDelegate {
     func alarmSwitchAction(isAlarmActive: Bool, at row: Int) {
-        alarmList[row].isActive = isAlarmActive
-        do {
-            try context.save()
-            getAllAlarmsList()
-        } catch {
-            
+        viewModel.modifyRecord(record: viewModel.alarmList[row], isAlarmActive: isAlarmActive)
+    }
+}
+
+// MARK: - AlarmViewModel
+extension AlarmsViewController: AlarmViewModelDelegate {
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }

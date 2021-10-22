@@ -34,6 +34,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXH-DP-obt">
+                        <rect key="frame" x="286.5" y="36" width="58.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KbF-ZW-apA" firstAttribute="top" secondItem="G2C-8V-O8B" secondAttribute="bottom" constant="10" id="4K4-qC-0EQ"/>
@@ -44,6 +50,8 @@
                     <constraint firstAttribute="trailing" secondItem="TVg-vF-MOH" secondAttribute="trailing" constant="15" id="Yxb-DU-jEy"/>
                     <constraint firstItem="G2C-8V-O8B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eKq-gZ-hxs"/>
                     <constraint firstItem="TVg-vF-MOH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G2C-8V-O8B" secondAttribute="trailing" constant="10" id="p4n-m8-euX"/>
+                    <constraint firstItem="SXH-DP-obt" firstAttribute="top" secondItem="TVg-vF-MOH" secondAttribute="bottom" constant="9" id="sif-ft-do1"/>
+                    <constraint firstAttribute="trailing" secondItem="SXH-DP-obt" secondAttribute="trailing" constant="15" id="uHg-Ur-ypj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
